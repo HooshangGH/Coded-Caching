@@ -58,10 +58,7 @@ It is evident that an all-but-one equation transmitted from the server allows ea
 	As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
 	Let $\Pi_1, \ldots, \Pi_{\beta}$ represent the intervals where $\Pi_i$ appears before $\Pi_j$ if $i < j$; $|\Pi_\ell|$ denotes the length of interval $\Pi_\ell$ . The intervals are left-closed and right-open.  An easy to see but very useful property of the intervals that we have defined is that for a given $i$, either $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell$ or $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \emptyset$. Fig. \ref{Fig:N_3_K_3_M_1_offline} shows an example when $K=3$. We define $U_\ell = \{i \in [K]:~ [T_i , T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell \}$, and
 	$D_\ell = \{d_i\in [N]:~i\in U_\ell \}$.
-%\begin{align*}
-%	U_\ell &= \{i \in [K]:~ [T_i , T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell \}, \text{and}\\
-%	D_\ell &= \{d_i\in [N]:~i\in U_\ell \}.
-%\end{align*}
+
 Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\ell$ is the corresponding set of active file requests.
 	
 \noindent {\it Outputs.}
