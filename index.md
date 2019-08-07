@@ -77,8 +77,8 @@ def __init__(self, N, K, M, F, arrival_times, deadlines, cache_contents, Omega):
 	'''
 ```
 Basically 
-* arrival_times $= [T_1,\ldots, T_K]$ and deadlines $=[T_1+\Delta_1,\ldots, T_K+\Delta+K]$. 
-* Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $[(n-1)*N+f-1 \for  W_{n,f} \in Z_i]$. * Similarly, Omega is an array of array so that Omega[i] = $[(d_i-1)*N+f-1 \for W_{d_i,f} \in \Omega^{(i)}]$.
+* arrival_times $= [T_1,\ldots, T_K]$ and deadlines $$=[T_1+\Delta_1,\ldots, T_K+\Delta+K]$$. 
+* Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $$[(n-1)*N+f-1 \for  W_{n,f} \in Z_i]$$. * Similarly, Omega is an array of array so that Omega[i] = $$[(d_i-1)*N+f-1 \for W_{d_i,f} \in \Omega^{(i)}]$$.
 
 To solve the offline problem, you need to call ```make_n_solve_LP``` function after creating an object of the class and initializing it. Output to this function is solution of the LP and rate (minimum number of transmitted equations (packets)). If the problem is feasible, the rate will be -1. Here is an example for Example 1 in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>. 
 ```js
@@ -109,3 +109,14 @@ Also, here is the output when you run this code
 ### Online Case
 In the online scenario, at time $\tau$ only information about the already arrived requests are known to the server, i.e., it only knows $T_i$, $d_i$ and $\Delta_i$ for $i \in [K]$ such that $T_i \leq \tau$.
 
+We have ```Decentralized_CC``` in our ```ODCC.py``` file that can be used for the online case. You can download it from <a href="ODCC.py">here</a>. The class has to be initialized in this way
+```js
+def __init__(self, K, N, F, n, r,
+                 cache_contents,
+                 requested_files,
+                 arrival_times,
+                 deadlines,
+                 threshold_eta):
+		 
+```
+The only differences from the offline case are that we have $n$, $r$, and ```threshold_eta```. We have talked about this parameters in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>.
