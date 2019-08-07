@@ -42,9 +42,9 @@ We let $\Omega^{(i)}$ denote the indices of the subfiles that are not present in
 	\end{align*}
 The equations in the delivery phase are assumed to be of the *all-but-one* type.
 \begin{definition} *All-but-one equation*. Consider an equation $E$ such that
-\begin{align*}
+$$
 E = \oplus_{l=1}^\ell W_{d_{i_l}, f_{l}}.
-\end{align*}
+$$
 We say that $E$ is of the all-but-one type if for each $l \in [\ell]$, we have $W_{d_{i_l}, f_{l}} \notin Z_{i_l}$ and $W_{d_{i_l}, f_{l}} \in Z_{i_{k}}$ for all $k \in [\ell] \setminus \{l\}$.
 \end{definition}
 It is evident that an all-but-one equation transmitted from the server allows each of the users participating in the equation to recover a missing subfile that they need. The asynchronous coded caching problem can be formulated as follows.
@@ -56,7 +56,7 @@ It is evident that an all-but-one equation transmitted from the server allows ea
 
 As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
 	
-Let $\Pi_1, \ldots, \Pi_{\beta}$ represent the intervals where $\Pi_i$ appears before $\Pi_j$ if $i < j$; $|\Pi_\ell|$ denotes the length of interval $\Pi_\ell$ . The intervals are left-closed and right-open.  An easy to see but very useful property of the intervals that we have defined is that for a given $i$, either $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell$ or $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \emptyset$. Fig. \ref{Fig:N_3_K_3_M_1_offline} shows an example when $K=3$. We define $U_\ell = \{i \in [K]:~ [T_i , T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell \}$, and $D_\ell = \{d_i\in [N]:~i\in U_\ell \}$.
+
 
 Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\ell$ is the corresponding set of active file requests.
 	
