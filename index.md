@@ -76,5 +76,5 @@ def __init__(self, N, K, M, F, arrival_times, deadlines, cache_contents, Omega):
         :param cache_contents:  cache content of each user
 	'''
 ```
-
+Basically arrival_times $= [T_1,\ldots, T_K]$ and deadlines $=[T_1+\Delta_1,\ldots, T_K+\Delta+K]$. Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $[(n-1)*N+f-1 \ for \ W_{n,f} \in Z_i]$. Similarly, Omega is an array of array so that Omega[i] = $[(d_i-1)*N+f-1 \ for \ W_{d_i,f} \in \Omega^{(i)}]$.
 
