@@ -106,3 +106,6 @@ Also, here is the output when you run this code
 ```
 ```off_solution``` is set of nonzero $x_U(\ell)$'s after solving LP in (1) in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>.
 
+### Online Case
+In the online scenario, at time $\tau$ only information about the already arrived requests are known to the server, i.e., it only knows $T_i$, $d_i$ and $\Delta_i$ for $i \in [K]$ such that $T_i \leq \tau$.
+
