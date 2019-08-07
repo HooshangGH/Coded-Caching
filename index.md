@@ -7,7 +7,7 @@
 # Asynchronous Coded Caching
 
 ## Original Coded Caching Problem
-In their pioneering work \cite{maddahN14}, Maddah-Ali and Niesen considered the usage of coding in the caching problem. In this so-called ``coded caching" setting, there is a server containing $N$ files, $K$ users each with a cache that can store up to $M$ files. The users are connected to the server via an error-free shared link (see Fig. \ref{Fig:block_coded_caching}).
+In their pioneering work, Maddah-Ali and Niesen considered the usage of coding in the caching problem. In this so-called "coded caching" setting, there is a server containing $N$ files, $K$ users each with a cache that can store up to $M$ files. The users are connected to the server via an error-free shared link (see Fig. \ref{Fig:block_coded_caching}).
 	The system operates in two distinct phases. In the \textit{placement phase} the content of the caches is populated by server. This phase does not depend on the future requests of the users which are assumed to be arbitrary. In the \textit{delivery phase} each user makes a request and the server transmits potentially coded signals to satisfy the requests of the users. The work of \cite{maddahN14} demonstrated that significant reductions in the network traffic were possible as compared to conventional caching. Crucially, these gains continue to hold even if the popularity of the files is not taken into account.
 
 
