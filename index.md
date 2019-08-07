@@ -119,4 +119,37 @@ def __init__(self, K, N, F, n, r,
                  threshold_eta):
 		 
 ```
-The only differences from the offline case are that we have $n$, $r$, and ```threshold_eta```. We have talked about this parameters in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>.
+The only differences from the offline case are that we have $n$, $r$, ```requested_files```, and ```threshold_eta```. We have talked about these parameters in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>. Unlike offline case, instead of feeding $\Omega^{(i)}$'s to the class, we use ```requested_files``` $=[d_1, \ldots, d_K]$. Here we show how we use our code for the online case of Example 1 in  <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>.
+
+```js
+from OffACC import *
+from ODCC import *
+# setting of the problem
+N = 3
+K = 3
+M = 1
+F = 3
+arrival_times = [0, 1, 3]
+deadlines = [5, 5, 5]
+cache_contents = [[3, 4, 8], [0, 5, 6], [3, 4, 7]]
+
+requested_files = [i+1 for i in range(K)]
+
+eta = 0.0
+n = 1
+r = 1
+
+objOnline = Decentralized_CC(K, N, F, n, r, cache_contents, requested_files, arrival_times, deadlines, eta)
+
+rate, online_solution = objOnline.run_algo_mod_eta()
+
+print(rate)
+print(online_solution)
+```
+When running this code, the following will be printed out.
+```
+-1
+None
+```
+This means that our algorithm was not able to come up with a solution that satisfies all requestes within their deadline. The reason is that time $\tau=2$ the algorithm prefers serving user 2 instead of the user 1 and since use 1 and user 2 can't simultanouesly benefit from a *all-but-one* type of euation thus the remaining time after $\tau=3$ is not enough to satisfy 3 missing subfiles of users 1 and 2 only in 2 time slots.
+
