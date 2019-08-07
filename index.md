@@ -151,5 +151,5 @@ When running this code, the following will be printed out.
 -1
 None
 ```
-This means that our algorithm was not able to come up with a solution that satisfies all requestes within their deadline. The reason is that time $\tau=2$ the algorithm prefers serving user 2 instead of the user 1 and since use 1 and user 2 can't simultanouesly benefit from a *all-but-one* type of euation thus the remaining time after $\tau=3$ is not enough to satisfy 3 missing subfiles of users 1 and 2 only in 2 time slots.
+This means that our algorithm was not able to come up with a solution that satisfies all requestes within their deadline. The reason is that time $\tau=2$ the algorithm prefers serving user 2 instead of the user 1 and since use 1 and user 2 can't simultanouesly benefit from a *all-but-one* type of euation thus the remaining time after $\tau=3$ is not enough to transmit 3 missing subfiles of users 1 and 2 only in 2 time slots.
 
