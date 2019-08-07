@@ -50,9 +50,9 @@ We say that $E$ is of the all-but-one type if for each $l \in [\ell]$, we have $
 It is evident that an all-but-one equation transmitted from the server allows each of the users participating in the equation to recover a missing subfile that they need. The asynchronous coded caching problem can be formulated as follows.
 	
 *Inputs.*
-	* *User requests.* User $i$ requests file $W_{d_i}$, with $d_i \in [N]$ at time $T_i$. %User $i$'s request arrives at the server at time $T_i$.
-	* *Deadlines.* The $i$-th user needs to be satisfied by time $T_i + \Delta_i$, where $\Delta_i$ is a positive integer.
-	* *Transmission delay.* Each subfile needs $r$ time-slots to be transmitted over the shared link, i.e., each subfile can be treated as equivalent to $r$ packets, where each packet can be transmitted in one time slot.
+* *User requests.* User $i$ requests file $W_{d_i}$, with $d_i \in [N]$ at time $T_i$. %User $i$'s request arrives at the server at time $T_i$.
+* *Deadlines.* The $i$-th user needs to be satisfied by time $T_i + \Delta_i$, where $\Delta_i$ is a positive integer.
+* *Transmission delay.* Each subfile needs $r$ time-slots to be transmitted over the shared link, i.e., each subfile can be treated as equivalent to $r$ packets, where each packet can be transmitted in one time slot.
 
 As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
 	
@@ -61,6 +61,6 @@ Let $\Pi_1, \ldots, \Pi_{\beta}$ represent the intervals where $\Pi_i$ appears b
 Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\ell$ is the corresponding set of active file requests.
 	
 *Outputs.*
-	* *Transmissions at each time slot.* If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. 
+* *Transmissions at each time slot.* If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. 
 
 
