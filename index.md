@@ -11,7 +11,9 @@ In their pioneering work, Maddah-Ali and Niesen considered the usage of coding i
 
 The system operates in two distinct phases. 
 * In the \textbf{placement phase} the content of the caches is populated by server. This phase does not depend on the future requests of the users which are assumed to be arbitrary. 
-* In the \textbf{delivery phase} each user makes a request and the server transmits potentially coded signals to satisfy the requests of the users. The work of Maddah-Ali and Niesen demonstrated that significant reductions in the network traffic were possible as compared to conventional caching. Crucially, these gains continue to hold even if the popularity of the files is not taken into account.
+* In the \textbf{delivery phase} each user makes a request and the server transmits potentially coded signals to satisfy the requests of the users.
+
+The work of Maddah-Ali and Niesen demonstrated that significant reductions in the network traffic were possible as compared to conventional caching. Crucially, these gains continue to hold even if the popularity of the files is not taken into account.
 
 
 ## Asynchronous Coded Caching
