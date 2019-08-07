@@ -78,7 +78,7 @@ def __init__(self, N, K, M, F, arrival_times, deadlines, cache_contents, Omega):
 ```
 Basically 
 * arrival_times $= [T_1,\ldots, T_K]$ and deadlines $=[T_1+\Delta_1,\ldots, T_K+\Delta+K]$. 
-* Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $[(n-1)*N+f-1 \ for \ W_{n,f} \in Z_i]$. Similarly, Omega is an array of array so that Omega[i] = $[(d_i-1)*N+f-1 \ for \ W_{d_i,f} \in \Omega^{(i)}]$.
+* Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $[(n-1)*N+f-1 \for  W_{n,f} \in Z_i]$. * Similarly, Omega is an array of array so that Omega[i] = $[(d_i-1)*N+f-1 \for W_{d_i,f} \in \Omega^{(i)}]$.
 
 To solve the offline problem, you need to call ```make_n_solve_LP``` function after creating an object of the class and initializing it. Output to this function is solution of the LP and rate (minimum number of transmitted equations (packets)). If the problem is feasible, the rate will be -1. Here is an example for Example 1 in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>. 
 ```js
@@ -104,5 +104,5 @@ Also, here is the output when you run this code
 {'{0}-1': 1.0, '{0}-0': 1.0, '{2}-2': 1.0, '{1,2}-2': 1.0, '{0,1}-1': 1.0}
 5.0
 ```
-
+```off_solution``` is set of nonzero $x_U(\ell)$'s after solving LP in (1) in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>.
 
