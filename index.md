@@ -13,7 +13,7 @@
 </head>
 
 # Asynchronous Coded Caching
-
+Here, I want to present overall idea of our work on asynchronous coded caching problem and explain the code we used to generate the simulation results in our work. For more detail about our work please take a look in <a href="https://arxiv.org/pdf/1907.06801.pdf" title="this">this</a> and <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8006967" title="this">this</a> papers.
 ## Original Coded Caching Problem
 In their pioneering work, Maddah-Ali and Niesen considered the usage of coding in the caching problem. In this so-called "coded caching" setting, there is a server containing $N$ files, $K$ users each with a cache that can store up to $M$ files. The users are connected to the server via an error-free shared link.
 
@@ -61,5 +61,20 @@ Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\el
 	
 *Outputs.*
 * *Transmissions at each time slot.* If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. 
+
+### Offline Case
+In this section, we discuss the offline version of the problem where the server has the knowledge of the arrival times/deadlines of all the requests at $\tau = 0$. We have written a python class to return offline solution for a problem instance. For simplicity, each subfile $W_{n,f}$ is denoted by index $j = (n-1)*F + f -1$. The class must be initialized by the following parameters:
+```js
+def __init__(self, N, K, M, F, arrival_times, deadlines, cache_contents, Omega):
+        '''
+        :param N:               number of files
+        :param K:               number of users
+        :param M:               cache size normalized by file size
+        :param F:               size of each file
+        :param arrival_times:   arrival times of the users
+        :param deadlines:       deadline of each user
+        :param cache_contents:  cache content of each user
+	'''
+```
 
 
