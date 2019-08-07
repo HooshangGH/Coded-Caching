@@ -80,5 +80,29 @@ Basically
 * arrival_times $= [T_1,\ldots, T_K]$ and deadlines $=[T_1+\Delta_1,\ldots, T_K+\Delta+K]$. 
 * Also, cache_contents is an array of array of size $K$ so that cache_contents[i] = $[(n-1)*N+f-1 \ for \ W_{n,f} \in Z_i]$. Similarly, Omega is an array of array so that Omega[i] = $[(d_i-1)*N+f-1 \ for \ W_{d_i,f} \in \Omega^{(i)}]$.
 
-To solve the offline problem, you need to call ```js make_n_solve_LP``` function after creating an object of the class and initializing it. Output to this function is solution of the LP and rate (minimum number of transmitted equations (packets)). Here is an example for Example 1 in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>. 
+To solve the offline problem, you need to call ```make_n_solve_LP``` function after creating an object of the class and initializing it. Output to this function is solution of the LP and rate (minimum number of transmitted equations (packets)). If the problem is feasible, the rate will be -1. Here is an example for Example 1 in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a>. 
+```js
+from OffACC import *
+# setting of the problem
+N = 3
+K = 3
+M = 1
+F = 3
+arrival_times = [0, 1, 3]
+deadlines = [5, 5, 5]
+cache_contents = [[3, 4, 8], [0, 5, 6], [3, 4, 7]]
+Omega = [[0, 1, 2], [3, 4], [6, 8]]
+# object of the class
+objOff = OffACC(N, K, M, F, arrival_times, deadlines, cache_contents, Omega)
+# calling make_nsolve_LP
+off_solution, rate = objOff.make_n_solve_LP()
+print(off_solution)
+print(rate)
+```
+Also, here is the output when you run this code
+```js
+{'{0}-1': 1.0, '{0}-0': 1.0, '{2}-2': 1.0, '{1,2}-2': 1.0, '{0,1}-1': 1.0}
+5.0
+```
+
 
