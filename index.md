@@ -63,7 +63,7 @@ Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\el
 * *Transmissions at each time slot.* If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. 
 
 ### Offline Case
-In this section, we discuss the offline version of the problem where the server has the knowledge of the arrival times/deadlines of all the requests at $\tau = 0$. We have written a python class (OffACC.py) to return offline solution for a problem instance. You can find the code <a href="https://github.com/HooshangGH/Coded-Caching/">here</a> and download it from <a hfre= "OffACC.py">her</a>. For simplicity, each subfile $W_{n,f}$ is denoted by index $j = (n-1)*F + f -1$. The class must be initialized by the following parameters:
+In this section, we discuss the offline version of the problem where the server has the knowledge of the arrival times/deadlines of all the requests at $\tau = 0$. We have written a python class (OffACC.py) to return offline solution for a problem instance. You can find the code <a href="https://github.com/HooshangGH/Coded-Caching/">here</a> and download it from <a href= "OffACC.py">here</a>. For simplicity, each subfile $W_{n,f}$ is denoted by index $j = (n-1)*F + f -1$. The class must be initialized by the following parameters:
 ```js
 def __init__(self, N, K, M, F, arrival_times, deadlines, cache_contents, Omega):
         '''
