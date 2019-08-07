@@ -49,21 +49,18 @@ We say that $E$ is of the all-but-one type if for each $l \in [\ell]$, we have $
 \end{definition}
 It is evident that an all-but-one equation transmitted from the server allows each of the users participating in the equation to recover a missing subfile that they need. The asynchronous coded caching problem can be formulated as follows.
 	
-	\noindent {\it Inputs.}
-	\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
-		\item {\it User requests.} User $i$ requests file $W_{d_i}$, with $d_i \in [N]$ at time $T_i$. %User $i$'s request arrives at the server at time $T_i$.
-		\item {\it Deadlines.} The $i$-th user needs to be satisfied by time $T_i + \Delta_i$, where $\Delta_i$ is a positive integer.
-		\item {\it Transmission delay.} Each subfile needs $r$ time-slots to be transmitted over the shared link, i.e., each subfile can be treated as equivalent to $r$ packets, where each packet can be transmitted in one time slot.
-	\end{itemize}
-	As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
-	Let $\Pi_1, \ldots, \Pi_{\beta}$ represent the intervals where $\Pi_i$ appears before $\Pi_j$ if $i < j$; $|\Pi_\ell|$ denotes the length of interval $\Pi_\ell$ . The intervals are left-closed and right-open.  An easy to see but very useful property of the intervals that we have defined is that for a given $i$, either $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell$ or $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \emptyset$. Fig. \ref{Fig:N_3_K_3_M_1_offline} shows an example when $K=3$. We define $U_\ell = \{i \in [K]:~ [T_i , T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell \}$, and
-	$D_\ell = \{d_i\in [N]:~i\in U_\ell \}$.
+*Inputs.*
+	* *User requests.* User $i$ requests file $W_{d_i}$, with $d_i \in [N]$ at time $T_i$. %User $i$'s request arrives at the server at time $T_i$.
+	* *Deadlines.* The $i$-th user needs to be satisfied by time $T_i + \Delta_i$, where $\Delta_i$ is a positive integer.
+	* *Transmission delay.* Each subfile needs $r$ time-slots to be transmitted over the shared link, i.e., each subfile can be treated as equivalent to $r$ packets, where each packet can be transmitted in one time slot.
+
+As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
+	
+Let $\Pi_1, \ldots, \Pi_{\beta}$ represent the intervals where $\Pi_i$ appears before $\Pi_j$ if $i < j$; $|\Pi_\ell|$ denotes the length of interval $\Pi_\ell$ . The intervals are left-closed and right-open.  An easy to see but very useful property of the intervals that we have defined is that for a given $i$, either $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell$ or $[T_i, T_i + \Delta_i) \cap \Pi_\ell = \emptyset$. Fig. \ref{Fig:N_3_K_3_M_1_offline} shows an example when $K=3$. We define $U_\ell = \{i \in [K]:~ [T_i , T_i + \Delta_i) \cap \Pi_\ell = \Pi_\ell \}$, and $D_\ell = \{d_i\in [N]:~i\in U_\ell \}$.
 
 Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\ell$ is the corresponding set of active file requests.
 	
-\noindent {\it Outputs.}
-	\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
-		\item {\it Transmissions at each time slot.} If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. %\aditya{question may arise as to why we enforce this condition}
-	\end{itemize}
+*Outputs.*
+	* *Transmissions at each time slot.* If the problem is feasible, the schedule specifies which equations (of the all-but-one type) need to be transmitted at each time. The schedule is such that each user can recover all its missing subfiles within its deadline. The equations transmitted at time $\tau \in \Pi_\ell$ only depend on $D_\ell$. 
 
 
