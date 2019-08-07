@@ -37,11 +37,11 @@ In this work we formulate and study the coded caching problem when the user requ
 ### Problem Formulation
 We assume that time $\tau \geq 0$ is slotted. Let $[n]$ denote the set $\{1, \ldots, n\}$ and the symbol $\oplus$ represent the XOR operation. We assume that the server contains $N\geq K$ files\footnote{We assume that $N\geq K$ as it corresponds to the worst case rate where each of the $K$ users can request a different file. Furthermore, it is also the more practical scenario.} denoted by $W_{n}, n = 1, \dots, N$. The subfiles are denoted by $W_{n,f}$ so that $W_n = \{W_{n,f}: f \in [F]\}$ and the cache of user $i$ by $Z_i \subseteq \{ W_{n,f}: \ n \in [N], \ f \in [F] \}$. $Z_i$ contains at most $M_iF$ subfiles. In the delivery phase, user $i$ requests file $W_{d_i}$, where $d_i \in [N]$, from the server.
 We let $\Omega^{(i)}$ denote the indices of the subfiles that are not present in the $i$-th user's cache, i.e.,
-	\begin{align*}
-	\Omega^{(i)} = \{ f:\ f \in [F], \ W_{d_i,f} \notin Z_i \}.
-	\end{align*}
+$$
+\Omega^{(i)} = \{ f:\ f \in [F], \ W_{d_i,f} \notin Z_i \}.
+$$
 The equations in the delivery phase are assumed to be of the *all-but-one* type.
-\begin{definition} *All-but-one equation*. Consider an equation $E$ such that
+*All-but-one equation*. Consider an equation $E$ such that
 $$
 E = \oplus_{l=1}^\ell W_{d_{i_l}, f_{l}}.
 $$
@@ -54,9 +54,8 @@ It is evident that an all-but-one equation transmitted from the server allows ea
 * *Deadlines.* The $i$-th user needs to be satisfied by time $T_i + \Delta_i$, where $\Delta_i$ is a positive integer.
 * *Transmission delay.* Each subfile needs $r$ time-slots to be transmitted over the shared link, i.e., each subfile can be treated as equivalent to $r$ packets, where each packet can be transmitted in one time slot.
 
-As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into {\it at most} $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
+As the problem is symmetric with respect to users, w.l.o.g. we assume that $T_1 \leq T_2 \leq \ldots \leq T_K$. Let $T_{\max} = \max_i (T_i + \Delta_i)$. Note that upon sorting the set of arrival times and deadlines, i.e., $\cup_{i=1}^{K} \{T_i, T_i + \Delta_i\}$, we can divide the interval $[T_1, T_{\max})$ into *at most* $2K-1$ non-overlapping intervals. Let the integer $\beta$, where $1 \leq \beta \leq 2K-1$ denote the number of intervals.
 	
-
 
 Thus, $U_\ell$ is the set of active users in time interval $\Pi_\ell$ and $D_\ell$ is the corresponding set of active file requests.
 	
