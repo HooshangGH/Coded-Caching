@@ -157,4 +157,25 @@ This means that our algorithm was not able to come up with a solution that satis
 ## Dual Decomposition
 The complexity of the solving the LP does grow quite quickly (cubic) in the problem parameters. The LP in (1) in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a> can however be modified slightly so that the corresponding dual function is such that it can be evaluated by solving a set of *decoupled minimum cost network flow optimizations*. Please take a look at this paper for more detail.
 
+I also wrote a cpp code to solve LP in (1) in <a href="https://arxiv.org/pdf/1907.06801.pdf">our paper</a> by dual decomposition idea. The code is available <a hfre="MCFgraph">here</a>. You must creat an object of ```ProblemInstance``` class and run it. I used <a href="https://lemon.cs.elte.hu/trac/lemon/wiki/MinCostFlowData">Lemon Package</a> for solving minimum cost flow problems. You need to install Lemon package for using my code. Here is how I use this code.
+```js
+const int K = 20;
+const int t = 2;
+const int r = 1;
+int Tmaxitr = 1000;
+double alpha = 0.99;
+int offItrs = 20;
+// Arrival times and deadlines
+vector<int> deadline = {0, 10, 20, 79, 83, 108};
+vector<int> arrival = {51, 126, 91, 138, 162, 220};
+// creating an object of the class
+ProblemInstance prb_instc(arrival, deadline, K, t, r);
+// Constructing the problem instance and associated MCF graph
+prb_instc.ConstructProblem();
+// Solving the problem instance.
+prb_instc.SolveProblem(Tmaxitr, alpha, offItrs);
+
+```
+
+Please feel free to reach out to me about the codes.
 
