@@ -13,7 +13,7 @@
 </head>
 
 # Asynchronous Coded Caching
-Here, I want to present overall idea of our work on asynchronous coded caching problem and explain the code we used to generate the simulation results in our work. For more detail about our work please take a look in <a href="https://arxiv.org/pdf/1907.06801.pdf" title="this">this</a> and <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8006967" title="this">this</a> papers.
+Here, I want to present overall idea of our work on asynchronous coded caching problem and explain the code we used to generate the simulation results in our work. For more detail about our work please take a look at <a href="https://arxiv.org/pdf/1907.06801.pdf" title="this">this</a> and <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8006967" title="this">this</a> papers.
 ## Original Coded Caching Problem
 In their pioneering work, Maddah-Ali and Niesen considered the usage of coding in the caching problem. In this so-called "coded caching" setting, there is a server containing $N$ files, $K$ users each with a cache that can store up to $M$ files. The users are connected to the server via an error-free shared link.
 
